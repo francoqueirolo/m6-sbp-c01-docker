@@ -73,3 +73,16 @@ docker build -t myapp:2.0 .
 ```
 docker run -d --name myapp02 myapp:2.0 
 ```
+
+-
+## NOTA : Para volver a generar la Imagen deben borrar la anterior
+
+### Borar contenedor
+```
+docker rm myapp02
+```
+
+### Borar imagen
+```
+docker rmi myapp:2.0
+```
