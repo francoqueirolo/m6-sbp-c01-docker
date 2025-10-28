@@ -33,3 +33,26 @@ mvn clean package
 ```
 java -jar target/3_maven-1.0-SNAPSHOT.jar
 ```
+
+### Crear el Dockerfile
+```Dockerfile
+FROM openjdk:17
+
+WORKDIR /app
+
+COPY target/*.jar /app/app.jar
+
+CMD ["java", "-jar", "/app/app.jar"]
+```
+### Construir la imagen Docker
+```
+docker build -t myappjava:1.0 .
+```
+### Ejecutar el contenedor Docker
+```
+docker run -d --name myappjava01 myappjava:1.0
+```
+### Ver los logs del contenedor
+```
+docker logs myappjava01
+```

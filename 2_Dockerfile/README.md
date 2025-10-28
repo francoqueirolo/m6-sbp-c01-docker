@@ -6,7 +6,7 @@
 # Base image
 FROM openjdk:17
 ```
-
+SOLICITO CERTIFICADO DE MOVIMIENTO MIGRATORIO DE MI HIJA ALBA SOFIA GOMEZ MONTERO
 ### Construir la imagen de Docker con el siguiente comando:
 ```
 docker build -t myapp:1.0 .
@@ -85,4 +85,30 @@ docker rm myapp02
 ### Borar imagen
 ```
 docker rmi myapp:2.0
+```
+
+
+### Cambiar el codigo java 
+```
+public class HelloWorld {
+    public static void main(String[] args) {
+        int cont = 0;
+        while(true) {
+            try {
+                Thread.sleep(1000);
+                cont++;
+                System.out.println("Mensaje #" + cont + ": Hello, World!");
+            } catch (InterruptedException e) {
+                System.out.println("Se interrumpió el hilo");
+                // Handle exception
+            }
+        }
+
+    }
+}
+```
+
+### Ejecutar el contenedor y ingresar al contenedor
+```
+docker exec -it myapp02 /bin/bash
 ```
